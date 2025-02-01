@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  backend:
+    build:
+      context: ../../
+      dockerfile: ./Dockerfile
+      args:
+        - SERVICE_DIR=backend
+      target: run_local
+    restart: always
+    volumes:
+      - ../../services/backend:/home/web/code/services/backend
+      - /home/web/code/services/backend/node_modules
+    environment:
+      - DATABASE_URL=postgres://postgres:mysecretpassword@postgres:5432/tps?schema=public
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16.1-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=tps
+    ports:
+      - "5432:5432"
+    volumes:
+      - il-postgres:/var/lib/postgresql/data
+
+volumes:
+  il-postgres:
