@@ -21,8 +21,7 @@ export class PutPeriodDto {
     description: `Start of available time slot`,
   })
   @IsValidTime({
-    message:
-      'Start time must be in the format HH:mm and between 00:00 and 23:59',
+    message: 'incorrect-start',
   })
   startTime: string;
 
@@ -31,8 +30,7 @@ export class PutPeriodDto {
     description: `Finish of available time slot`,
   })
   @IsValidTime({
-    message:
-      'Finish time must be in the format HH:mm and between 00:00 and 23:59',
+    message: 'incorrect-finish',
   })
   finishTime: string;
 }

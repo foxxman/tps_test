@@ -1,0 +1,23 @@
+<div class="login-container flex-column-center">
+  <h1 class="page-title">Login</h1>
+  <form class="login-form" (ngSubmit)="onLogin()">
+    <input
+      type="email"
+      placeholder="Email"
+      [(ngModel)]="email"
+      name="email"
+      required
+      class="input"
+    />
+    <input
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+      name="password"
+      required
+      class="input"
+    />
+    <button class="btn-submit" type="submit">LogIn</button>
+  </form>
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+</div>

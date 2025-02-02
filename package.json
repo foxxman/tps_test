@@ -2,7 +2,8 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "services/backend"
+      "services/backend",
+      "services/web-client"
     ],
     "nohoist": [
       "**/.prisma/**",
@@ -14,7 +15,7 @@
     ]
   },
   "scripts": {
-    "start:docker": "docker-compose --compatibility -p tps_test -f deploy/local/docker-compose.yml up --force-recreate --build -d",
+    "start:local": "docker-compose --compatibility -p tps_test -f deploy/local/docker-compose.yml up --force-recreate --build -d",
     "prisma:generate": "yarn workspace backend run prisma generate"
   }
 }

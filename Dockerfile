@@ -5,6 +5,7 @@ WORKDIR /home/web/code/
 COPY ./yarn.lock ./yarn.lock
 COPY ./package.json ./package.json
 COPY ./services/backend/package.json ./services/backend/package.json
+COPY ./services/web-client/package.json ./services/web-client/package.json
 RUN yarn install --network-timeout=300000
 
 # LOCAL IMAGE

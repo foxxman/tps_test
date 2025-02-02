@@ -1,0 +1,33 @@
+@import "../../styles.scss";
+
+.login-container {
+  margin: auto;
+  width: fit-content;
+
+  border: 3px solid $color-blue;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid $color-blue;
+  width: 100%;
+  outline: none;
+}
+
+.btn-submit {
+  background-color: $color-blue;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}

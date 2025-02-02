@@ -1,0 +1,34 @@
+@import "../../styles.scss";
+
+.table {
+  th:first-child,
+  td {
+    text-align: left;
+    padding: 0 5px;
+  }
+
+  td {
+    padding-top: 15px;
+  }
+
+  td:last-child {
+    padding-left: 15px;
+  }
+}
+
+.btn {
+  background-color: $color-blue;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input {
+  border: none;
+  border-bottom: 2px solid $color-blue;
+  text-align: center;
+  outline: none;
+}

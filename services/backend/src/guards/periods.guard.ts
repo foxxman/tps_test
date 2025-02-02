@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { isNumber } from 'class-validator';
 import { isAfter, isBefore, isEqual } from 'date-fns';
-import { InvalidTimeRangeException } from 'src/errors/periods';
+import { OutOfTimeRangeException } from 'src/errors/periods';
 import { PutPeriodDto } from 'src/modules/periods/dto';
 import { PeriodsService } from 'src/modules/periods/periods.service';
 import { getUserDateTime, setTime } from 'src/utils/date';
@@ -52,7 +52,6 @@ export class PeriodsGuard implements CanActivate {
     if ((isDateInAvailableRange || isDateEqualToBorder) && isWeekDayEqual) {
       return true;
     }
-
-    throw new InvalidTimeRangeException();
+    throw new OutOfTimeRangeException();
   }
 }

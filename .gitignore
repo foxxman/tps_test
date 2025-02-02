@@ -180,6 +180,7 @@ dist
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+.vscode
 
 # Local History for Visual Studio Code
 .history/
@@ -307,3 +308,7 @@ fabric.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/node,nextjs,visualstudiocode,webstorm
 !/services/package-lock.json
+
+# Miscellaneous
+/services/web-client/.angular/cache
+.sass-cache/

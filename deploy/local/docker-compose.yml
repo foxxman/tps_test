@@ -1,6 +1,19 @@
 version: "3"
 
 services:
+  web-client:
+    build:
+      context: ../../
+      dockerfile: ./Dockerfile
+      args:
+        - SERVICE_DIR=web-client
+      target: run_local
+    restart: always
+    volumes:
+      - ../../services/web-client:/home/web/code/services/web-client
+    ports:
+      - 3001:4200
+
   backend:
     build:
       context: ../../
